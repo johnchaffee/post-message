@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>postMessage Demo: Parent</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>Parent Window</h1>
+
+	<p>
+		<button id="sendToIframe">Render Sidebar</button>
+	</p>
+
+	<p>
+		<button id="sendToModal">Open Modal</button>
+	</p>
+
+	<p>
+		<button id="sendToPopup">Open Popup</button>
+	</p>
+	
+	<iframe id="sidebar" src="sidebar.html" width="400" height="200">
+		<p>Your browser does not support iframes.</p>
+	</iframe>
+
+	<iframe id="modal" src="modal.html" width="400" height="200">
+		<p>Your browser does not support iframes.</p>
+	</iframe>
+
+	<script src="parent.js"></script>
+</body>
+
+</html>
