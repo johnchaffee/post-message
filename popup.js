@@ -34,7 +34,6 @@ window.onload = function() {
                     break;
                 }
 		}
-
 	}
 
 	// Setup an event listener that calls receiveMessage() when the window

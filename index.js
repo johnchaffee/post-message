@@ -2,7 +2,6 @@ window.onload = function () {
 	// Get references to the iframe windows
 	var sidebar = document.getElementById('sidebar').contentWindow;
 	var modal = document.getElementById('modal').contentWindow;
-	// var popup;
 	var popup = window.open('popup.html', 'foo', 'width=400px,height=500px,top=200,left=1720');
 	var timeoutInterval = 0;
 
@@ -30,10 +29,10 @@ window.onload = function () {
 		e.preventDefault();
 		console.log("e: " + JSON.stringify(e, null, 2));
 		if (popup) {
-			// Popup already open. Display the message with no delay.
+			// Popup exists. Display the message with no delay.
 			console.log("popup === true");
 		} else {
-			// Popup not open. Open it and set a 200 milisecond delay before displaying message
+			// Popup does not exist. Open it and set a 200 milisecond delay before displaying message.
 			console.log("popup === false");
 			popup = window.open('popup.html', 'foo', 'width=400px,height=500px,top=200,left=1720');
 			timeoutInterval = 200;
