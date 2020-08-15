@@ -10,27 +10,24 @@
 <body>
 	<h1>Parent Window</h1>
 
-	<p>
-		<button id="sidebarBtn">Update Sidebar</button>
-	</p>
-
-	<p>
-		<button id="modalBtn">Show Modal</button>
-	</p>
-
-	<p>
-		<button id="popupBtn">Open Popup</button>
-	</p>
-
-
-	<p>
-		<label for="message">Compose Box:</label><br>
-		<textarea id="message" name="message" rows="6" cols="50"></textarea>
-	</p>
-
-	<iframe id="sidebar" src="sidebar.html" width="400" height="200">
-		<p>Your browser does not support iframes.</p>
-	</iframe>
+	<div class="flex-container">
+		<div  id="sidebarBtn" class="inbox">Inbox</div>
+		<div class="messages">
+			<div>Messages</div>
+			<div class="compose">
+				<label for="message">Compose Box:</label><br>
+				<textarea id="message" name="message" rows="6" cols="100%"></textarea>
+				<br>
+				<button id="modalBtn">Show Modal</button>
+				<button id="popupBtn">Open Popup</button>
+			</div>
+		</div>
+		<div class="sidebar">
+			<iframe id="sidebar" src="sidebar.html">
+				<p>Your browser does not support iframes.</p>
+			</iframe>
+		</div>	  
+	  </div>
 
 	<dialog id="dialog">
 		<iframe id="modal" src="modal.html" width="400" height="200">
