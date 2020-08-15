@@ -8,29 +8,53 @@
 </head>
 
 <body>
-	<div class="flex-container">
-		<div  id="sidebarBtn" class="inbox">
-			<b>Inbox</b>
-			<p>Conversation 1</p>
-			<p>Conversation 2</p>
-			<p>Conversation 3</p>
-		</div>
-		<div class="messages">
-			<div><b>Messages</b></div>
-			<div class="compose">
+
+	<table style="width:1000px">
+		<tr>
+			<th width="200px">Inbox</th>
+			<th>Messages</th>
+			<th width="300px">Sidebar</th>
+		</tr>
+		<tr>
+			<td id="sidebarBtn" rowspan="2">
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+				<p>Conversation</p>
+			</td>
+			<td>
+				<p>Incoming Message goes here.</p>
+				<p style="text-align:right;">Outgoing Message. Testing 123.</p>
+				<p>Incoming Message goes here.</p>
+				<p style="text-align:right;">Outgoing Message. Testing 123.</p>
+				<p>Incoming Message goes here.</p>
+				<p style="text-align:right;">Outgoing Message. Testing 123.</p>
+				<p>Incoming Message goes here.</p>
+				<p style="text-align:right;">Outgoing Message. Testing 123.</p>
+			</td>
+			<td rowspan="2">
+				<iframe id="sidebar" src="sidebar.html">
+					<p>Your browser does not support iframes.</p>
+				</iframe>	
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: bottom;">
 				<label for="message">Compose Box:</label><br>
-				<textarea id="message" name="message" rows="6" cols="40"></textarea>
+				<textarea id="message" name="message" rows="8" cols="50"></textarea>
 				<br>
 				<button id="modalBtn">Show Modal</button>
 				<button id="popupBtn">Open Popup</button>
-			</div>
-		</div>
-		<div class="sidebar">
-			<iframe id="sidebar" src="sidebar.html">
-				<p>Your browser does not support iframes.</p>
-			</iframe>
-		</div>	  
-	  </div>
+			</td>
+		</tr>
+
+	</table>
 
 	<dialog id="dialog">
 		<iframe id="modal" src="modal.html" width="400" height="200">
