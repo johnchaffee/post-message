@@ -1,6 +1,27 @@
 window.onload = function () {
-	// Get a reference to the <div> on the page that will display the
-	// message text.
+
+	// --- SENDING MESSAGEES ---
+
+	// Get a reference to the parent window
+	var parentWindow = window.parent;
+
+	// Get a reference to the buttons
+	var parentBtn = document.getElementById('parentBtn');
+
+	// Post message to Parent
+	function postToParent(e) {
+		e.preventDefault();
+		console.log("e: " + JSON.stringify(e, null, 2));
+		parentWindow.postMessage('Message from Sidebar to Parent', 'http://localhost');
+	}
+
+	// Add an event listener to execute function when button is clicked
+	parentBtn.addEventListener('click', postToParent);
+
+
+	// --- RECEIVING MESSAGEES ---
+
+	// Get a reference to the <div> on the page that will display the message text.
 	var messageEle = document.getElementById('message');
 
 	// A function to process messages received by the window.
@@ -15,7 +36,7 @@ window.onload = function () {
 			return;
 		} else {
 			// Update the div element to display the message.
-			messageEle.innerHTML += "\nMessage Received: " + e.data;
+			messageEle.innerHTML += e.data + "<br>";
 		}
 
 	}
