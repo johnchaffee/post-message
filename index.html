@@ -25,16 +25,18 @@
 
 	<p>
 		<label for="message">Compose Box:</label><br>
-		<textarea id="message" name="message" rows="4" cols="50"></textarea>
+		<textarea id="message" name="message" rows="6" cols="50"></textarea>
 	</p>
-	
+
 	<iframe id="sidebar" src="sidebar.html" width="400" height="200">
 		<p>Your browser does not support iframes.</p>
 	</iframe>
 
-	<iframe id="modal" src="modal.html" width="400" height="200">
-		<p>Your browser does not support iframes.</p>
-	</iframe>
+	<dialog id="dialog">
+		<iframe id="modal" src="modal.html" width="400" height="200">
+			<p>Your browser does not support iframes.</p>
+		</iframe>
+	</dialog>
 
 	<script src="index.js"></script>
 </body>
