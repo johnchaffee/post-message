@@ -6,7 +6,7 @@ window.onload = function () {
 	var sidebar = document.getElementById('sidebar').contentWindow;
 	var dialog = document.getElementById("dialog");
 	var modal = document.getElementById('modal').contentWindow;
-	var popup = window.open('popup.html', 'popup', 'width=400px,height=500px,top=200,left=1720');
+	var popup
 	var timeoutInterval = 0;
 
 	// Get a reference to the buttons
@@ -35,22 +35,15 @@ window.onload = function () {
 	function postToPopup(e) {
 		e.preventDefault();
 		console.log("e: " + JSON.stringify(e, null, 2));
-		if (popup) {
-			// Popup exists. Display the message with no delay.
-			console.log("popup === true");
-		} else {
-			// Popup does not exist. Open it and set a 200 milisecond delay before displaying message.
-			console.log("popup === false");
-			popup = window.open('popup.html', 'popup', 'width=400px,height=500px,top=200,left=1720');
-			timeoutInterval = 200;
-		}
+		popup = window.open('popup.html', 'popup', 'width=400px,height=500px,top=200,left=1720');
+		timeoutInterval = 300;
 		popup.focus();
 
 		// Post message after timeoutInterval
 		// There needs to be a slight delay if the popup window is new
 		setTimeout(function () {
-		// TODO Replace "*" with targetWindow (e.g. "https://example.com")
-		popup.postMessage('Message from Parent to Popup', "*");
+			// TODO Replace "*" with targetWindow (e.g. "https://example.com")
+			popup.postMessage('Message from Parent to Popup', "*");
 		}, timeoutInterval);
 	}
 
