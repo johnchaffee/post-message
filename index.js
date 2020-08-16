@@ -23,6 +23,8 @@ window.onload = function () {
 	}
 
 	// Post message to Modal
+	// TODO Warning: showModal is not supported on mobile
+	// Replace this with something like bootsrap modal
 	function postToModal(e) {
 		e.preventDefault();
 		console.log("e: " + JSON.stringify(e, null, 2));
