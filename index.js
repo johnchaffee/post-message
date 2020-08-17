@@ -7,7 +7,6 @@ window.onload = function () {
 	var dialog = document.getElementById("dialog");
 	var modal = document.getElementById('modal').contentWindow;
 	var popup
-	var timeoutInterval = 0;
 
 	// Get a reference to the buttons
 	var sidebarBtn = document.getElementById('sidebarBtn');
@@ -38,15 +37,14 @@ window.onload = function () {
 		e.preventDefault();
 		console.log("e: " + JSON.stringify(e, null, 2));
 		popup = window.open('popup.html', 'popup', 'width=400px,height=500px,top=200,left=1720');
-		timeoutInterval = 300;
 		popup.focus();
 
-		// Post message after timeoutInterval
-		// There needs to be a slight delay if the popup window is new
+		// Post message after 300 milisecond timeout
+		// There needs to be a slight delay to allow time for the popup window to open
 		setTimeout(function () {
 			// TODO Replace "*" with targetWindow (e.g. "https://example.com")
 			popup.postMessage('Message from Parent to Popup', "*");
-		}, timeoutInterval);
+		}, 300);
 	}
 
 	// Add an event listener to execute function when button is clicked
