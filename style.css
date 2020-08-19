@@ -53,3 +53,11 @@ textarea {
   margin-left: 160px;
   margin-right: 0;
 }
+
+.yellow {
+  background-color: lightyellow;
+}
+
+.center {
+  text-align: center;
+}

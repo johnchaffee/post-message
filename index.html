@@ -22,11 +22,10 @@
 				<p class="conversation" id="conv3">Conversation 3</p>
 			</td>
 			<td>
-				<p class="message">Incoming Message goes here.</p>
-				<p class="message right">Outgoing Message. Testing 123.</p>
-				<p class="message">Incoming Message goes here.</p>
-				<p class="message right">Outgoing Message. Testing 123.</p>
-				<p class="message">Incoming Message goes here.</p>
+				<p class="message">Incoming Message</p>
+				<p class="message right">Outgoing Message</p>
+				<p class="message">Incoming Message</p>
+				<p class="message right">Outgoing Message</p>
 			</td>
 			<td rowspan="2" height="500px">
 				<iframe id="sidebar" src="sidebar.html" width="300px" height="500px">
@@ -35,9 +34,9 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="vertical-align: bottom;">
-				<label for="message">Compose Box:</label><br>
-				<textarea id="message" name="message" rows="8" cols="50"></textarea>
+			<td style="vertical-align: middle;">
+				<label for="message"><strong>Compose Box</strong></label><br>
+				<textarea id="message" name="message" rows="9" cols="50"></textarea>
 				<br>
 				<button id="modalBtn">Show Modal</button>
 				<button id="popupBtn">Open Popup</button>
@@ -45,9 +44,10 @@
 					<p>Your browser does not support iframes.</p>
 				</iframe>
 			</td>
-		</tr>
-
+		</tr>		
 	</table>
+
+	<p><em>iframes are displayed with a <span class="yellow">yellow</span> backgound</em></p>
 
 	<dialog id="dialog">
 		<iframe id="modal" src="modal.html" width="300px" height="200px">
