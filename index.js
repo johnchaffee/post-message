@@ -9,16 +9,20 @@ window.onload = function () {
 	var popup
 
 	// Get a reference to the buttons
-	var sidebarBtn = document.getElementById('sidebarBtn');
+	var conv1Btn = document.getElementById('conv1');
+	var conv2Btn = document.getElementById('conv2');
+	var conv3Btn = document.getElementById('conv3');
 	var modalBtn = document.getElementById('modalBtn');
 	var popupBtn = document.getElementById('popupBtn');
 
 	// Post message to Sidebar
 	function postToSidebar(e) {
 		e.preventDefault();
+		console.log("this: " + this);
+		console.log("this.id: " + this.id);
 		console.log("e: " + JSON.stringify(e, null, 2));
 		// TODO Replace "*" with targetWindow (e.g. "https://example.com")
-		sidebar.postMessage('Message from Parent to Sidebar', "*");
+		sidebar.postMessage('Message from Parent to Sidebar: ' + this.id, "*");
 	}
 
 	// Post message to Modal
@@ -48,7 +52,9 @@ window.onload = function () {
 	}
 
 	// Add an event listener to execute function when button is clicked
-	sidebarBtn.addEventListener('click', postToSidebar);
+	conv1Btn.addEventListener('click', postToSidebar);
+	conv2Btn.addEventListener('click', postToSidebar);
+	conv3Btn.addEventListener('click', postToSidebar);
 	modalBtn.addEventListener('click', postToModal);
 	popupBtn.addEventListener('click', postToPopup);
 
