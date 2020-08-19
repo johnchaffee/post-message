@@ -36,7 +36,7 @@ window.onload = function () {
 	function postToPopup(e) {
 		e.preventDefault();
 		console.log("e: " + JSON.stringify(e, null, 2));
-		popup = window.open('popup.html', 'popup', 'width=300px,height=200px,top=200,left=600');
+		popup = window.open('popup.html', 'popup', 'width=300px,height=400px,top=200,left=600');
 		popup.focus();
 
 		// Post message after 300 milisecond timeout
